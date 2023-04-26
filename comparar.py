@@ -9,7 +9,7 @@ nltk.download('omw-1.4')
 
 file_docs = []
 
-with open('prueba.c-') as f:
+with open('test.txt') as f:
     tokens = sent_tokenize(f.read())
     for line in tokens:
         file_docs.append(line)
@@ -41,9 +41,9 @@ sims = gensim.similarities.Similarity('workdir/',tf_idf[corpus],
 
 # Create query document
 
-file_docs2 = []
+file2_docs = []
 
-with open('prueba2.c-') as f:
+with open('test1.txt') as f:
     tokens = sent_tokenize(f.read())
     for line in tokens:
         file2_docs.append(line)
