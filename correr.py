@@ -11,7 +11,7 @@ def globales(prog, pos, long):
 from globalTypes import *
 from lexer import *
 
-f = open('prueba.c-', 'r')
+f = open('prueba2.c-', 'r')
 program = f.read() 		# lee todo el archivo a compilar
 progLong = len(program) 	# longitud original del program
 program = program + '$' 	# agregar un caracter $ que represente EOF
@@ -24,3 +24,5 @@ globales(program, position, progLong)
 token, tokenString, _ = getToken(True)
 while (token != TokenType.ENDFILE):
     token, tokenString, _ = getToken(True)
+    
+file1.close()

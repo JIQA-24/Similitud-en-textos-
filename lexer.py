@@ -14,8 +14,10 @@ de caracteres leída hasta ahora (tokenString).
 Si imprime es True, también imprime el tipo  de token y la cadena de caracteres en la consola.
 '''
 
-
 from globalTypes import *
+
+file1 = open('test.txt', 'w')
+
 
 lineno = 1
 
@@ -183,11 +185,18 @@ def getToken(imprime = True): # función principal
             if currentToken == TokenType.ID:
                 currentToken = reservedLookup(tokenString)
         position += 1
-        
+
     if imprime:
+        
         print(lineno, currentToken," = ", tokenString) # prints a token and its lexeme
+        file1.write(str(currentToken) + " " + str(tokenString) + "\n")
+        
     #print("CURRENT:", currentToken, lineno)
+    
+    
     return currentToken, tokenString, lineno
+
+
 
 #f = open('prueba.tny', 'r')
 ##f = open('sample.tny', 'r')
