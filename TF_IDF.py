@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Define a set of documents
-docs = ['This is the first document', 'This document is the second document', 'And this is the third one', 'Is this the first document?']
+docs = ['This is the first document', 'This document is the second document', 'And this is the third one', 'Is this the first document']
 
 # Create a pandas DataFrame with the word counts for each document
 word_counts = pd.DataFrame(index=list(set(word.lower() for doc in docs for word in doc.split())), columns=range(len(docs)), data=0)
