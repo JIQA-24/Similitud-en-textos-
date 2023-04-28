@@ -2,8 +2,18 @@ import math
 import pandas as pd
 import numpy as np
 
+f1 = open("file1.txt", "r")
+f2 = open("file2.txt", "r")
+f3 = open("file3.txt", "r")
+f4 = open("file4.txt", "r")
+
+f1r = f1.read()
+f2r = f2.read()
+f3r = f3.read()
+f4r = f4.read()
+
 # Define a set of documents
-docs = ['This is the first document', 'This document is the second document', 'And this is the third one', 'Is this the first document']
+docs = [f1r, f2r, f3r, f4r]
 
 # Create a pandas DataFrame with the word counts for each document
 word_counts = pd.DataFrame(index=list(set(word.lower() for doc in docs for word in doc.split())), columns=range(len(docs)), data=0)

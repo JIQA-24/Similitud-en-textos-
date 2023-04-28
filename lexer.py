@@ -16,18 +16,19 @@ Si imprime es True, también imprime el tipo  de token y la cadena de caracteres
 
 from globalTypes import *
 
-file1 = open('test.txt', 'w')
 
 
 lineno = 1
 
-def recibeScanner(prog, pos, long): # función para pasar los valores iniciales de las variables globales
+def recibeScanner(prog, pos, long, fileno): # función para pasar los valores iniciales de las variables globales
     global program
     global position
     global programLength
+    global filen
     program = prog
     position = pos
     programLength = long
+    filen = fileno
 
 def reservedLookup(tokenString): # busca en la lista de palabras reservadas
     for w in ReservedWords:
@@ -187,9 +188,12 @@ def getToken(imprime = True): # función principal
         position += 1
 
     if imprime:
+        # Open the file in append mode
+        with open(str("file"+str(filen+1)+".txt"), "a") as f:
+            # Write the string to the file
+            f.write(str(currentToken)+"\n")
         
         print(lineno, currentToken," = ", tokenString) # prints a token and its lexeme
-        file1.write(str(currentToken) + " " + str(tokenString) + "\n")
         
     #print("CURRENT:", currentToken, lineno)
     
@@ -204,4 +208,3 @@ def getToken(imprime = True): # función principal
 #programLength = len(program) # original program length
 #program = program + '$' # add a character to represente EOF
 #position = 0 # the position of the current char in file
-

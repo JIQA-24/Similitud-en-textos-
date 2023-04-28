@@ -30,8 +30,8 @@ un comentario*/
 }
 void main (void)
 { int x; int Y ;
-x = y + 45;
-output(x);
+x input(); Y input();
+output (gcd (x, y) ) ;
 }
 
 /* Un programa para realizar ordenacion por

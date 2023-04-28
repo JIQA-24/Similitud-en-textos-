@@ -11,18 +11,29 @@ def globales(prog, pos, long):
 from globalTypes import *
 from lexer import *
 
-f = open('prueba2.c-', 'r')
-program = f.read() 		# lee todo el archivo a compilar
-progLong = len(program) 	# longitud original del program
-program = program + '$' 	# agregar un caracter $ que represente EOF
-position = 0 			# posición del caracter actual del string
+for i in range (4):
+    with open("file"+str(i+1)+".txt", "w") as f:
+        # The file is now empty
+        pass
 
-recibeScanner(program, position, progLong)
-# función para pasar los valores iniciales de las variables globales
-globales(program, position, progLong)
 
-token, tokenString, _ = getToken(True)
-while (token != TokenType.ENDFILE):
+for i in range (4):
+
+    print(i)
+    f = open(str('prueba'+str(i)+'.c-'), 'r')
+    program = f.read() 		# lee todo el archivo a compilar
+    progLong = len(program) 	# longitud original del program
+    program = program + '$' 	# agregar un caracter $ que represente EOF
+    position = 0 			# posición del caracter actual del string
+
+    recibeScanner(program, position, progLong, i)
+    # función para pasar los valores iniciales de las variables globales
+    globales(program, position, progLong)
+
     token, tokenString, _ = getToken(True)
-    
-file1.close()
+    while (token != TokenType.ENDFILE):
+        token, tokenString, _ = getToken(True)
+        
+    f.close()
+
+    i += 1
