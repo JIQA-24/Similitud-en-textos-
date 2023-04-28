@@ -26,3 +26,5 @@ while (token != TokenType.ENDFILE):
     token, tokenString, _ = getToken(True)
     
 file1.close()
+
+#PENE
