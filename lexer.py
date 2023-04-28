@@ -189,8 +189,11 @@ def getToken(imprime = True): # función principal
     if imprime:
         
         print(lineno, currentToken," = ", tokenString) # prints a token and its lexeme
-        file1.write(str(currentToken) + " " + str(tokenString) + "\n")
-        
+
+        thisdict = {str(currentToken) + str(tokenString)}
+        #print(thisdict)
+
+        return thisdict
     #print("CURRENT:", currentToken, lineno)
     
     
