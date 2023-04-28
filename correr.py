@@ -10,6 +10,7 @@ def globales(prog, pos, long):
 
 from globalTypes import *
 from lexer import *
+from TF_IDF import *
 
 f = open('prueba2.c-', 'r')
 program = f.read() 		# lee todo el archivo a compilar
@@ -21,10 +22,12 @@ recibeScanner(program, position, progLong)
 # función para pasar los valores iniciales de las variables globales
 globales(program, position, progLong)
 
-token, tokenString, _ = getToken(True)
+token, tokenString, _ , thisdict = getToken(True)
 while (token != TokenType.ENDFILE):
-    token, tokenString, _ = getToken(True)
+    token, tokenString, _ , thisdict = getToken(True)
     
-file1.close()
 
-#PENE
+getTF_IDF()
+print(thisdict)
+
+file1.close()
