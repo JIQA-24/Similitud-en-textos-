@@ -34,7 +34,7 @@ for i in range (4):
     #jala los programas en -c y hace el lexer de cada uno
 
     #print(i)
-    f = open(str('prueba'+str(i)+'.c-'), 'r')
+    f = open(str('prueba'+str(i+1)+'.c-'), 'r')
     program = f.read() 		# lee todo el archivo a compilar
     progLong = len(program) 	# longitud original del program
     program = program + '$' 	# agregar un caracter $ que represente EOF
