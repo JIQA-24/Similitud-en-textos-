@@ -1,3 +1,6 @@
+from Tf import *
+from TF_IDF import *
+
 def globales(prog, pos, long):
     global program
     global position
@@ -37,3 +40,29 @@ for i in range (4):
     f.close()
 
     i += 1
+
+def menu():
+    print("========================================")
+    print("|        SELECCIONE UNA OPCION         |")
+    print("========================================")
+    print("| 1. TF                                |")
+    print("| 2. TF-IDF                            |")
+    print("| 3. Salir                             |")
+    print("========================================")
+
+    option = input("Que desea calcular?... ")
+
+    if option == "1":
+        tf()
+        menu()
+    elif option == "2":
+        tf_idf()
+        menu()
+    elif option == "3":
+        print("Gracias! 10 porfa")
+    else:
+        print("Por favor ingresa 1 o 2")
+        menu()
+
+
+menu()
