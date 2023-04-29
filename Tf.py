@@ -34,6 +34,6 @@ def getTF():
     cos_sim = cosine_similarity(tf.T)
 
     # Print the results
-    output_columns = ['doc'+str(i+1) for i in range(len(docs))]
+    output_columns = ['Programa'+str(i+1) for i in range(len(docs))]
     output_df = pd.DataFrame(data=cos_sim, columns=output_columns, index=output_columns)
     print(output_df)
