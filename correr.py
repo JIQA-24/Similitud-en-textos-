@@ -7,6 +7,9 @@
 
 '''
 
+from globalTypes import *
+from lexer import *
+from analyzer import *
 
 
 def globales(prog, pos, long):
@@ -17,23 +20,14 @@ def globales(prog, pos, long):
     position = pos
     progLong = long
 
-#El script con el que se prueba será el siguiente:
-
-from globalTypes import *
-from lexer import *
-from TF_IDF import *
-from Tf import *
+#Los Scripts que prueba son los siguientes:
 
 for i in range (4):
     with open("programa"+str(i+1)+".c-", "w") as f:
-        # The file is now empty
         pass
 
-
 for i in range (4):
-    #jala los programas en -c y hace el lexer de cada uno
-
-    #print(i)
+    #Identifica todos los tokens en los programas usando el lexer
     f = open(str('prueba'+str(i+1)+'.c-'), 'r')
     program = f.read() 		# lee todo el archivo a compilar
     progLong = len(program) 	# longitud original del program
@@ -52,5 +46,4 @@ for i in range (4):
 
     i += 1
 
-getTF()
-getTFDIF()
+analyzeText()
