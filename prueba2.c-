@@ -1,3 +1,22 @@
+
+int main() {
+    !
+    int x = 123;
+    int y = 123;
+    /*esto es 
+    un comentario*/
+    return 0;
+    10 == 40;
+    10 = 20;
+    10 <= 20;
+    10 >= 20;
+    !=
+    /*esto es un comentario*/
+    contador = contador + 3indice
+}
+
+
+
 /*esto es 
 un comentario*/
 
