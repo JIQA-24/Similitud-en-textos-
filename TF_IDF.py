@@ -1,6 +1,7 @@
 import math
 import pandas as pd
 import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
 f1 = open("file1.txt", "r")
 f2 = open("file2.txt", "r")
@@ -36,16 +37,10 @@ for i in range(len(word_counts)):
 # Calculate the TF-IDF scores for each word in each document
 tf_idf = tf * idf
 
-# Calculate the cosine similarity between each pair of documents
-similarity_matrix = np.zeros((len(docs), len(docs)))
-for i in range(len(docs)):
-    for j in range(len(docs)):
-        if i == j:
-            similarity_matrix[i, j] = 1.0
-        else:
-            similarity_matrix[i, j] = np.dot(tf_idf[:, i], tf_idf[:, j]) / (np.linalg.norm(tf_idf[:, i]) * np.linalg.norm(tf_idf[:, j]))
+# Calculate the cosine similarity for the TF-IDF matrix
+cos_sim = cosine_similarity(tf_idf.T)
 
-# Create a DataFrame to display the results
-output_columns = [f"Document {i+1}" for i in range(len(docs))]
-output_df = pd.DataFrame(data=similarity_matrix, columns=output_columns, index=output_columns)
+# Print the results
+output_columns = ['doc'+str(i+1) for i in range(len(docs))]
+output_df = pd.DataFrame(data=cos_sim, columns=output_columns, index=output_columns)
 print(output_df)
