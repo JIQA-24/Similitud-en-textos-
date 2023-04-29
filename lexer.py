@@ -192,6 +192,7 @@ def getToken(imprime = True): # función principal
         with open(str("programa"+str(filen+1)+".c-"), "a") as f:
             # Write the string to the file
             f.write(str(currentToken)+"\n")
+            #hace el lexxer de los 4 programas en -c
         
         #print(lineno, currentToken," = ", tokenString) # prints a token and its lexeme
         
@@ -201,10 +202,3 @@ def getToken(imprime = True): # función principal
     return currentToken, tokenString, lineno
 
 
-
-#f = open('prueba.tny', 'r')
-##f = open('sample.tny', 'r')
-#program = f.read() # lee todo el archivo a compilar
-#programLength = len(program) # original program length
-#program = program + '$' # add a character to represente EOF
-#position = 0 # the position of the current char in file
