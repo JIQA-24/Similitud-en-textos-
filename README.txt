@@ -1,6 +1,6 @@
 README
 
-El programa que debe de correr es: correr.py
+El programa que debe de correr es: main.py
 
 Una vez que se inicialize el programa, se generaran los lexers de los programas c- y posteriormente se desplegara un menu con las opciones TF y TF-IDF.
 

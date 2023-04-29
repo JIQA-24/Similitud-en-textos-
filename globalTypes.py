@@ -1,3 +1,6 @@
+#Codigo por: Oscar Emilio Reyes Taboada A01369421
+# Jose Israel Quintero Alfaro A0136686
+
 from enum import Enum
 
 # TokenType

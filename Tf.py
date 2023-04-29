@@ -1,3 +1,6 @@
+#Codigo por: Oscar Emilio Reyes Taboada A01369421
+# Jose Israel Quintero Alfaro A0136686
+
 import math
 import pandas as pd
 import numpy as np

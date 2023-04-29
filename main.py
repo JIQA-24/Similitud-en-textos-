@@ -1,3 +1,6 @@
+#Codigo por: Oscar Emilio Reyes Taboada A01369421
+# Jose Israel Quintero Alfaro A01366861
+
 from Tf import *
 from TF_IDF import *
 
