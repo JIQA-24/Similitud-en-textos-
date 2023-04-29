@@ -1,3 +1,14 @@
+''' 
+    A01367102 y A01366907
+    Este script corre el programa de similitud de textos
+    y genera los archivos de los programas en -c
+    y da los vectores de frecuencia de términos
+    con la técnica TF-IDF y TF
+
+'''
+
+
+
 def globales(prog, pos, long):
     global program
     global position
@@ -20,6 +31,7 @@ for i in range (4):
 
 
 for i in range (4):
+    #jala los programas en -c y hace el lexer de cada uno
 
     #print(i)
     f = open(str('prueba'+str(i)+'.c-'), 'r')
