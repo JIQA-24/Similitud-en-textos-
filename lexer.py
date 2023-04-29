@@ -124,10 +124,10 @@ def getToken(imprime = True): # función principal
                         c='!='
                     else:
                         currentToken = TokenType.ERROR
-                        print("ERROR in: ", program[position], "line: ", lineno)
+                        #print("ERROR in: ", program[position], "line: ", lineno)
                 else:
                     currentToken = TokenType.ERROR
-                    print("ERROR in: ", program[position], "line: ", lineno)
+                    #print("ERROR in: ", program[position], "line: ", lineno)
         elif state == StateType.INCOMMENT: # comentario
             save = False
             if position == programLength: #EOF
@@ -149,12 +149,12 @@ def getToken(imprime = True): # función principal
                     position -= 1 # ungetNextChar()
                 save = False
                 currentToken = TokenType.ERROR
-                print("ERROR in: ", program[position], "line: ", lineno)
+                #print("ERROR in: ", program[position], "line: ", lineno)
                 
         elif state == StateType.INNUM: # número
             if not c.isdigit():
-                if c.isalpha():
-                    print("ERROR in: ", program[position], "line: ", lineno)
+                #if c.isalpha():
+                #    print("ERROR in: ", program[position], "line: ", lineno)
                 # backup in the input
                 if position <= programLength:
                     position -= 1 # ungetNextChar()
@@ -189,11 +189,11 @@ def getToken(imprime = True): # función principal
 
     if imprime:
         # Open the file in append mode
-        with open(str("file"+str(filen+1)+".txt"), "a") as f:
+        with open(str("programa"+str(filen+1)+".c-"), "a") as f:
             # Write the string to the file
             f.write(str(currentToken)+"\n")
         
-        print(lineno, currentToken," = ", tokenString) # prints a token and its lexeme
+        #print(lineno, currentToken," = ", tokenString) # prints a token and its lexeme
         
     #print("CURRENT:", currentToken, lineno)
     

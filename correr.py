@@ -10,16 +10,18 @@ def globales(prog, pos, long):
 
 from globalTypes import *
 from lexer import *
+from TF_IDF import *
+from Tf import *
 
 for i in range (4):
-    with open("file"+str(i+1)+".txt", "w") as f:
+    with open("programa"+str(i+1)+".c-", "w") as f:
         # The file is now empty
         pass
 
 
 for i in range (4):
 
-    print(i)
+    #print(i)
     f = open(str('prueba'+str(i)+'.c-'), 'r')
     program = f.read() 		# lee todo el archivo a compilar
     progLong = len(program) 	# longitud original del program
@@ -37,3 +39,6 @@ for i in range (4):
     f.close()
 
     i += 1
+
+getTF()
+getTFDIF()
