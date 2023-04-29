@@ -1,19 +1,3 @@
-'''
-Este es un código que implementa un analizador léxico para c-.
-La función recibeScanner se utiliza para inicializar las variables globales program,
-position y programLength con los valores que se pasan como argumentos.
-La función reservedLookup busca en la lista de palabras reservadas una coincidencia 
-con una cadena de caracteres que se pasa como argumento. 
-Si se encuentra una coincidencia, se devuelve el valor correspondiente de TokenType. 
-Si no se encuentra una coincidencia, se devuelve TokenType.ID.
-
-Mientras que state no sea StateType.DONE, el programa lee el carácter 
-actual de program[position] y lo guarda en c.
-En general, la función getToken devuelve el tipo de token actual (currentToken) y la cadena 
-de caracteres leída hasta ahora (tokenString). 
-Si imprime es True, también imprime el tipo  de token y la cadena de caracteres en la consola.
-'''
-
 from globalTypes import *
 
 
